@@ -33,3 +33,6 @@
 
 # Build files
 build/ 
+
+# Config files
+.ycm_extra_conf.py 
