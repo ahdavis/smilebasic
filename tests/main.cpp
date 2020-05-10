@@ -23,7 +23,8 @@
 //include GoogleTest
 #include <gtest/gtest.h>
 
-//TODO: include test suites
+//include test suites
+#include "./var/ValueStreamVisitorTest.h"
 
 //main function - main entry point for the test suite
 int main(int argc, char* argv[]) {
