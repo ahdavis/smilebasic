@@ -1,7 +1,7 @@
 /*
- * VariantTypeException.cpp
+ * ValueTypeException.cpp
  * Implements an exception thrown when a value of the wrong type
- * is requested from a Variant
+ * is requested from a Value
  * Created on 3/19/2020
  * Created by Andrew Davis
  *
@@ -22,17 +22,16 @@
  */
 
 //includes
-#include "VariantTypeException.h"
+#include "ValueTypeException.h"
 #include <sstream>
 
 //constructor
-VariantTypeException::VariantTypeException(const std::string& expected,
-						const std::string& actual)
+ValueTypeException::ValueTypeException(const std::string& expected, const std::string& actual)
 	: errMsg() //init the error message
 {
 	//assemble the error message
 	std::stringstream ss;
-	ss << "Wrong variant type requested (expected ";
+	ss << "Wrong value type requested (expected ";
 	ss << expected;
 	ss << ", found ";
 	ss << actual;
@@ -41,26 +40,26 @@ VariantTypeException::VariantTypeException(const std::string& expected,
 }
 
 //destructor
-VariantTypeException::~VariantTypeException() {
+ValueTypeException::~ValueTypeException() {
 	//no code needed	
 }
 
 //copy constructor
-VariantTypeException::VariantTypeException(const VariantTypeException& vte)
+ValueTypeException::ValueTypeException(const ValueTypeException& vte)
 	: errMsg(vte.errMsg) //copy the error message
 {
 	//no code needed 
 }
 
 //assignment operator
-VariantTypeException& VariantTypeException::operator=(const VariantTypeException& src) {
+ValueTypeException& ValueTypeException::operator=(const ValueTypeException& src) {
 	std::exception::operator=(src); //assign the superclass
 	this->errMsg = src.errMsg; //assign the error message
 	return *this; //and return the instance
 }
 
 //overridden what() method - called when the exception is thrown
-const char* VariantTypeException::what() const throw() {
+const char* ValueTypeException::what() const throw() {
 	return this->errMsg.c_str(); //return the error message 
 }
 

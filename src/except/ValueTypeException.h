@@ -1,7 +1,7 @@
 /*
- * VariantTypeException.h 
+ * ValueTypeException.h 
  * Declares an exception thrown when a value of the wrong type
- * is requested from a Variant
+ * is requested from a Value
  * Created on 3/19/2020
  * Created by Andrew Davis
  *
@@ -30,40 +30,40 @@
 
 /**
  * Thrown when a value of the wrong type 
- * is requested from a Variant
+ * is requested from a Value
  */
-class VariantTypeException final : public std::exception {
+class ValueTypeException final : public std::exception {
 	//public fields and methods
 	public:
 		/**
-		 * Constructs a new VariantTypeException instance
+		 * Constructs a new ValueTypeException instance
 		 *
-		 * @param expected The name of the expected variant type
-		 * @param actual The name of the actual variant type
+		 * @param expected The name of the expected value type
+		 * @param actual The name of the actual value type
 		 */
-		VariantTypeException(const std::string& expected,
+		ValueTypeException(const std::string& expected,
 					const std::string& actual);
 
 		/**
-		 * Destructs a VariantTypeException instance
+		 * Destructs a ValueTypeException instance
 		 */
-		~VariantTypeException();
+		~ValueTypeException();
 
 		/**
-		 * Copies a VariantTypeException instance
+		 * Copies a ValueTypeException instance
 		 *
 		 * @param vte The instance to copy
 		 */
-		VariantTypeException(const VariantTypeException& vte);
+		ValueTypeException(const ValueTypeException& vte);
 
 		/**
-		 * Assigns one VariantTypeException instance to another
+		 * Assigns one ValueTypeException instance to another
 		 *
 		 * @param src The instance to assign to this instance
 		 *
 		 * @returns The updated instance
 		 */
-		VariantTypeException& operator=(const VariantTypeException& src);
+		ValueTypeException& operator=(const ValueTypeException& src);
 
 		/**
 		 * Called when the exception is thrown
