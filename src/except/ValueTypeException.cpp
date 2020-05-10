@@ -26,15 +26,15 @@
 #include <sstream>
 
 //constructor
-ValueTypeException::ValueTypeException(const std::string& expected, const std::string& actual)
+ValueTypeException::ValueTypeException(ValueType expected, ValueType actual)
 	: errMsg() //init the error message
 {
 	//assemble the error message
 	std::stringstream ss;
 	ss << "Wrong value type requested (expected ";
-	ss << expected;
+	ss << nameForValueType(expected);
 	ss << ", found ";
-	ss << actual;
+	ss << nameForValueType(actual);
 	ss << ")";
 	this->errMsg = ss.str();
 }

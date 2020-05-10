@@ -27,6 +27,7 @@
 //includes
 #include <exception>
 #include <string>
+#include "../var/ValueType.h"
 
 /**
  * Thrown when a value of the wrong type 
@@ -38,11 +39,10 @@ class ValueTypeException final : public std::exception {
 		/**
 		 * Constructs a new ValueTypeException instance
 		 *
-		 * @param expected The name of the expected value type
-		 * @param actual The name of the actual value type
+		 * @param expected The expected value type
+		 * @param actual The actual value type
 		 */
-		ValueTypeException(const std::string& expected,
-					const std::string& actual);
+		ValueTypeException(ValueType expected, ValueType actual);
 
 		/**
 		 * Destructs a ValueTypeException instance
