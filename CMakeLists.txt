@@ -51,6 +51,9 @@ list(FILTER LIB_SRCS EXCLUDE REGEX "main.cpp")
 add_library(sbasic_lib STATIC ${LIB_SRCS})  
 add_executable(sbasic ${SRCS})
 
+# link the static library with the C++ math library
+target_link_libraries(sbasic_lib m)
+
 # link the library
 target_link_libraries(sbasic sbasic_lib)
 
