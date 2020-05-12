@@ -40,8 +40,8 @@ class TypecheckTest : public ::testing::Test {
 		void SetUp() override {
 			intStr = "42";
 			fltStr = "3.1419";
-			trueStr = "TRUE";
-			falseStr = "FALSE";
+			trueStr = "true";
+			falseStr = "false";
 		}
 
 		//fields

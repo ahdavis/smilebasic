@@ -42,7 +42,7 @@ bool checkFloat(const std::string& val) {
 
 //checkBool function - checks for a boolean
 bool checkBool(const std::string& val) {
-	return (val == "TRUE") || (val == "FALSE");
+	return (val == "true") || (val == "false");
 }
 
 //end of implementation
