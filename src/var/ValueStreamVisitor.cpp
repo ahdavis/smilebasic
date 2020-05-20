@@ -51,7 +51,7 @@ void ValueStreamVisitor::operator()(double d) const {
 
 //boolean visitor method
 void ValueStreamVisitor::operator()(bool b) const {
-	this->os << b; //stream out the bool
+	this->os << std::boolalpha << b; //stream out the bool
 }
 
 //string visitor method

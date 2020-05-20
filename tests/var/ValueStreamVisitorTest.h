@@ -64,7 +64,7 @@ TEST_F(ValueStreamVisitorTest, VisitDouble) {
 TEST_F(ValueStreamVisitorTest, VisitBool) {
 	_var = true;
 	std::visit(ValueStreamVisitor(_ss), _var);
-	EXPECT_EQ(_ss.str(), "1");
+	EXPECT_EQ(_ss.str(), "true");
 }
 
 //Tests visiting a string
