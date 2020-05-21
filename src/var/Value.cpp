@@ -740,7 +740,7 @@ std::istream& operator>>(std::istream& is, Value& v) {
 }
 
 //friendly getline function - reads an entire line into the Value from a stream
-void getline(std::istream& is, Value& v) {
+std::istream& getline(std::istream& is, Value& v) {
 	//read in the input
 	std::string input; //the string to read into
 	char c; //the current character being read
@@ -754,7 +754,7 @@ void getline(std::istream& is, Value& v) {
 		is.get(c);
 	}
 
-	//and determine the type of the input
+	//determine the type of the input
 	if(checkInt(input)) {
 		v = std::stoi(input);
 	} else if(checkFloat(input)) {
@@ -764,6 +764,9 @@ void getline(std::istream& is, Value& v) {
 	} else { //default to a string
 		v = input;
 	}
+
+	//and return the stream
+	return is;
 }
 
 //end of implementation

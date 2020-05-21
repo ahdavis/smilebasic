@@ -340,8 +340,10 @@ class Value {
 		 *
 		 * @param is The stream to read from
 		 * @param v The Value to read into
+		 *
+		 * @returns The updated stream
 		 */
-		friend void getline(std::istream& is, Value& v);
+		friend std::istream& getline(std::istream& is, Value& v);
 
 	//protected fields and methods
 	protected:
