@@ -42,6 +42,13 @@ class VariableTest : public ::testing::Test {
 		Variable strVar;
 };
 
+//Tests that a variable with no explicit value defaults to 
+//a value of 0
+TEST_F(VariableTest, DefaultValueIsZero) {
+	Variable defVar("default");
+	EXPECT_EQ(defVar.getValue().intValue(), 0); 
+}
+
 //Tests that variable types are set correctly
 TEST_F(VariableTest, CorrectTypes) {
 	EXPECT_EQ(numVar.getType(), VariableType::NUMBER);
