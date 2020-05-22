@@ -26,15 +26,31 @@
 //include
 #include <string>
 
-//function prototypes
-
-//checks for an int
+/**
+ * Checks a string to see if it is a valid integer
+ *
+ * @param val The string to check
+ *
+ * @returns Whether val is a valid integer
+ */
 bool checkInt(const std::string& val);
 
-//checks for a float
+/**
+ * Checks a string to see if it is a valid floating-point number
+ *
+ * @param val The string to check
+ *
+ * @returns Whether val is a valid floating-point number
+ */
 bool checkFloat(const std::string& val);
 
-//checks for a boolean
+/**
+ * Checks a string to see if it is a valid Boolean
+ *
+ * @param val The string to check
+ *
+ * @returns Whether val is a valid Boolean value
+ */
 bool checkBool(const std::string& val);
 
 //end of header
