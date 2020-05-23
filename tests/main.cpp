@@ -27,6 +27,7 @@
 #include "./var/ValueStreamVisitorTest.h"
 #include "./var/ValueTest.h"
 #include "./var/VariableTest.h"
+#include "./var/VariableRegistryTest.h"
 #include "./util/TypecheckTest.h"
 
 //main function - main entry point for the test suite
