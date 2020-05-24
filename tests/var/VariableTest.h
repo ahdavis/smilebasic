@@ -66,6 +66,19 @@ TEST_F(VariableTest, DifferentTypesNotEqual) {
 	EXPECT_TRUE(numVar != strVar);
 }
 
+//Tests the swapWith method
+TEST_F(VariableTest, SwapWith) {
+	Variable one("one", 1);
+	Variable two("two", 2);
+	Variable oneCopy = one;
+	Variable twoCopy = two;
+	EXPECT_EQ(one, oneCopy);
+	EXPECT_EQ(two, twoCopy);
+	one.swapWith(two);
+	EXPECT_EQ(one, twoCopy);
+	EXPECT_EQ(two, oneCopy);
+}
+
 //Tests the == operator
 TEST_F(VariableTest, Equals) {
 	EXPECT_EQ(numVar, numVar);
