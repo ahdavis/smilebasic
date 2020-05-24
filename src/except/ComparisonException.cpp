@@ -54,7 +54,6 @@ ComparisonException::ComparisonException(const ComparisonException& ce)
 
 //assignment operator
 ComparisonException& ComparisonException::operator=(const ComparisonException& src) {
-	std::exception::operator=(src); //call the superclass assignment operator
 	this->errMsg = src.errMsg; //assign the error message
 	return *this; //and return the instance
 }

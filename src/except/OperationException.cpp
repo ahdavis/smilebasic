@@ -56,7 +56,6 @@ OperationException::OperationException(const OperationException& ce)
 
 //assignment operator
 OperationException& OperationException::operator=(const OperationException& src) {
-	std::exception::operator=(src); //call the superclass assignment operator
 	this->errMsg = src.errMsg; //assign the error message
 	return *this; //and return the instance
 }

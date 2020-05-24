@@ -53,7 +53,6 @@ ValueTypeException::ValueTypeException(const ValueTypeException& vte)
 
 //assignment operator
 ValueTypeException& ValueTypeException::operator=(const ValueTypeException& src) {
-	std::exception::operator=(src); //assign the superclass
 	this->errMsg = src.errMsg; //assign the error message
 	return *this; //and return the instance
 }

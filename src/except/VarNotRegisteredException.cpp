@@ -51,7 +51,6 @@ VarNotRegisteredException::VarNotRegisteredException(const VarNotRegisteredExcep
 
 //assignment operator
 VarNotRegisteredException& VarNotRegisteredException::operator=(const VarNotRegisteredException& src) {
-	std::exception::operator=(src); //call the superclass assignment operator
 	this->errMsg = src.errMsg; //assign the error message
 	return *this; //and return the instance
 }
