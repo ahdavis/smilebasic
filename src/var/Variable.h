@@ -101,6 +101,13 @@ class Variable {
 		void setValue(const Value& newValue);
 
 		/**
+		 * Swaps the values of two Variables
+		 *
+		 * @param other The Variable to swap with this
+		 */
+		void swapWith(Variable& other);
+
+		/**
 		 * Determines whether two Variables are equivalent
 		 *
 		 * @param other The Variable to compare to this

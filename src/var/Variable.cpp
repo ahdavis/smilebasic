@@ -80,6 +80,11 @@ void Variable::setValue(const Value& newValue) {
 	this->updateType(); //and update the type
 }
 
+//swapWith method - swaps the values of two Variables
+void Variable::swapWith(Variable& other) {
+	this->value.swapWith(other.value); //swap the values of the Variables
+}
+
 //overloaded equality operator
 bool Variable::operator==(const Variable& other) const {
 	//ensure that comparing a number variable to a string variable
