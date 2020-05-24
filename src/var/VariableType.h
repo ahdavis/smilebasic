@@ -1,6 +1,6 @@
 /*
  * VariableType.h 
- * Declares an enum that lists scalar variable types 
+ * Declares an enum that lists variable and array types 
  * Created on 5/22/2020
  * Created by Andrew Davis
  *
@@ -26,7 +26,7 @@
 //no includes
 
 /**
- * The types a scalar Variable can have
+ * The types a Variable or Array can have
  */
 enum class VariableType {
 	/**
