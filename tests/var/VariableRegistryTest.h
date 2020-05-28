@@ -24,6 +24,7 @@
 #include <gtest/gtest.h>
 #include "../../src/var/VariableRegistry.h"
 #include "../../src/var/Variable.h"
+#include "../../src/except/VarNotRegisteredException.h"
 
 //test class definition
 class VariableRegistryTest : public ::testing::Test {
@@ -65,6 +66,11 @@ TEST_F(VariableRegistryTest, SetVariable) {
 TEST_F(VariableRegistryTest, HasVariable) {
 	EXPECT_FALSE(VariableRegistry::getInstance().hasVariable("greeting$"));
 	EXPECT_TRUE(VariableRegistry::getInstance().hasVariable("name$"));
+}
+
+//Tests that a VarNotRegisteredException is thrown when an invalid name is given
+TEST_F(VariableRegistryTest, NotRegisteredException) {
+	EXPECT_THROW(VariableRegistry::getInstance().getVariable("unused1"), VarNotRegisteredException);
 }
 
 //end of tests
