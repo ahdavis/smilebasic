@@ -36,7 +36,7 @@ class ArrayTest : public ::testing::Test {
 
 		//Constructor
 		ArrayTest()
-			: numArray(10, VariableType::NUMBER), strArray(2, VariableType::STRING) //init the fields 
+			: numArray("nums", 10, VariableType::NUMBER), strArray("strs$", 2, VariableType::STRING) //init the fields 
 		{
 			//no code needed
 		}
@@ -61,8 +61,8 @@ class ArrayTest : public ::testing::Test {
 
 //Tests the default filler values in an array
 TEST_F(ArrayTest, DefaultValues) {
-	Array numArray2(10, VariableType::NUMBER);
-	Array strArray2(5, VariableType::STRING);
+	Array numArray2("nums2", 10, VariableType::NUMBER);
+	Array strArray2("strs2$", 5, VariableType::STRING);
 	for(int i = 0; i < numArray2.getSize(); i++) {
 		EXPECT_EQ(numArray2[i], 0);
 	}

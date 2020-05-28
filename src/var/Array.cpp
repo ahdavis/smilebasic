@@ -25,8 +25,8 @@
 #include "../except/ArrayIndexOutOfRangeException.h"
 
 //constructor
-Array::Array(std::size_t newSize, VariableType newType)
-	: data(), size(newSize), type(newType) //init the fields
+Array::Array(const std::string& newName, std::size_t newSize, VariableType newType)
+	: data(), name(newName), size(newSize), type(newType) //init the fields
 {
 	//and load the array with empty values
 	Value loadVal;
@@ -47,7 +47,7 @@ Array::~Array() {
 
 //copy constructor
 Array::Array(const Array& a)
-	: data(a.data), size(a.size), type(a.type) //copy the fields
+	: data(a.data), name(a.name), size(a.size), type(a.type) //copy the fields
 {
 	//no code needed
 }
@@ -55,9 +55,15 @@ Array::Array(const Array& a)
 //assignment operator
 Array& Array::operator=(const Array& src) {
 	this->data = src.data; //assign the data field
+	this->name = src.name; //assign the name field 
 	this->size = src.size; //assign the size field
 	this->type = src.type; //assign the type field
 	return *this; //and return the instance
+}
+
+//getName method - gets the name of the Array
+const std::string& Array::getName() const {
+	return this->name; //return the name field
 }
 
 //getSize method - gets the size of the Array

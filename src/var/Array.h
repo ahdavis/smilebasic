@@ -26,6 +26,7 @@
 //includes
 #include <vector>
 #include <cstdlib>
+#include <string>
 #include "Value.h"
 #include "VariableType.h"
 #include "Variable.h"
@@ -40,10 +41,11 @@ class Array {
 		/**
 		 * Constructs a new Array instance
 		 *
+		 * @param newName The name of the Array
 		 * @param newSize The maximum number of Values in the Array
 		 * @param newType The type of the Array 
 		 */
-		Array(std::size_t newSize, VariableType newType);
+		Array(const std::string& newName, std::size_t newSize, VariableType newType);
 
 		/**
 		 * Destructs an Array instance
@@ -65,6 +67,13 @@ class Array {
 		 * @returns The updated instance
 		 */
 		Array& operator=(const Array& src);
+
+		/**
+		 * Gets the name of the Array
+		 *
+		 * @returns The name of the Array
+		 */
+		const std::string& getName() const;
 
 		/**
 		 * Gets the size of the Array
@@ -133,6 +142,11 @@ class Array {
 		 * The array data
 		 */
 		std::vector<Value> data;
+
+		/**
+		 * The name of the Array
+		 */
+		std::string name;
 
 		/**
 		 * The size of the Array
