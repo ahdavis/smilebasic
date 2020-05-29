@@ -60,7 +60,7 @@ const Variable& VariableRegistry::getVariable(const std::string& name) const {
 
 //setVariable method - updates or registers a Variable
 void VariableRegistry::setVariable(const Variable& var) {
-	this->db.emplace(var.getName(), var); //set the database entry for the Variable
+	this->db.insert_or_assign(var.getName(), var); //set the database entry for the Variable
 }
 
 //hasVariable method - determines whether a Variable exists in the registry 

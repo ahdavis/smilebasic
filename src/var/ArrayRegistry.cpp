@@ -60,7 +60,7 @@ const Array& ArrayRegistry::getArray(const std::string& name) const {
 
 //setArray method - updates or registers an Array
 void ArrayRegistry::setArray(const Array& arr) {
-	this->db.emplace(arr.getName(), arr); //set the database entry for the Array
+	this->db.insert_or_assign(arr.getName(), arr); //set the database entry for the Array
 }
 
 //hasArray method - determines whether an Array exists in the registry 
