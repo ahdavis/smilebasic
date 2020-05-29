@@ -60,6 +60,10 @@ TEST_F(VariableRegistryTest, SetVariable) {
 	VariableRegistry::getInstance().setVariable(otherVar);
 	Variable v = VariableRegistry::getInstance().getVariable(otherVar.getName());
 	EXPECT_EQ(v, otherVar);
+	otherVar.setValue(4);
+	VariableRegistry::getInstance().setVariable(otherVar);
+	v = VariableRegistry::getInstance().getVariable(otherVar.getName());
+	EXPECT_EQ(v, otherVar);
 }
 
 //Tests checking whether a Variable exists in the registry

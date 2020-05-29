@@ -60,11 +60,17 @@ TEST_F(ArrayRegistryTest, GetArray) {
 //Tests setting a Array in the registry
 TEST_F(ArrayRegistryTest, SetArray) {
 	Array otherArr("mathConstants", 5, VariableType::NUMBER);
+	otherArr[0] = 3.14;
 	ArrayRegistry::getInstance().setArray(otherArr);
 	Array a = ArrayRegistry::getInstance().getArray(otherArr.getName());
 	EXPECT_EQ(a.getSize(), otherArr.getSize());
 	EXPECT_EQ(a.getName(), otherArr.getName());
 	EXPECT_EQ(a.getType(), otherArr.getType());
+	EXPECT_EQ(a[0], otherArr[0]);
+	otherArr[0] = 2.17;
+	ArrayRegistry::getInstance().setArray(otherArr);
+	a = ArrayRegistry::getInstance().getArray(otherArr.getName());
+	EXPECT_EQ(a[0], otherArr[0]);
 }
 
 //Tests checking whether a Array exists in the registry
