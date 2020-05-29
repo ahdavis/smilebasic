@@ -65,7 +65,8 @@ void VariableRegistry::setVariable(const Variable& var) {
 
 //hasVariable method - determines whether a Variable exists in the registry 
 bool VariableRegistry::hasVariable(const std::string& name) const {
-	return this->db.count(name) != 0;
+	auto iter = this->db.find(name); //attempt to find the variable
+	return iter != this->db.end(); //and return whether the variable was found
 }
 
 //end of implementation

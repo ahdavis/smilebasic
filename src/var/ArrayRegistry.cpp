@@ -65,7 +65,8 @@ void ArrayRegistry::setArray(const Array& arr) {
 
 //hasArray method - determines whether an Array exists in the registry 
 bool ArrayRegistry::hasArray(const std::string& name) const {
-	return this->db.count(name) != 0;
+	auto iter = this->db.find(name); //attempt to find the array
+	return iter != this->db.end(); //and return whether the array was found
 }
 
 //end of implementation
