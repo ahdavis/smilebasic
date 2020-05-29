@@ -1,5 +1,5 @@
 # CMakeLists.txt
-# Generates a Makefile for the Orion Engine
+# Generates a Makefile for SmileBASIC 
 # Created on 3/19/2020
 # Created by Andrew Davis
 #
