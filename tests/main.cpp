@@ -31,6 +31,7 @@
 #include "./var/ArrayTest.h"
 #include "./var/ArrayRegistryTest.h"
 #include "./util/TypecheckTest.h"
+#include "./util/IsElementTest.h"
 #include "./lex/TokenTest.h"
 
 //main function - main entry point for the test suite
