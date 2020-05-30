@@ -1,7 +1,7 @@
 /*
- * main.cpp
- * Entry point for SmileBASIC's unit tests
- * Created on 3/19/2020
+ * TokenTest.h 
+ * Defines unit tests for the Token class
+ * Created on 5/29/2020
  * Created by Andrew Davis
  *
  * Copyright (C) 2020  Andrew Davis
@@ -20,23 +20,34 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-//include GoogleTest
+//includes
 #include <gtest/gtest.h>
+#include "../../src/lex/Token.h"
+#include "../../src/lex/TokenType.h"
 
-//include test suites
-#include "./var/ValueStreamVisitorTest.h"
-#include "./var/ValueTest.h"
-#include "./var/VariableTest.h"
-#include "./var/VariableRegistryTest.h"
-#include "./var/ArrayTest.h"
-#include "./var/ArrayRegistryTest.h"
-#include "./util/TypecheckTest.h"
-#include "./lex/TokenTest.h"
+//test class definition
+class TokenTest : public ::testing::Test {
+	protected:
 
-//main function - main entry point for the test suite
-int main(int argc, char* argv[]) {
-	::testing::InitGoogleTest(&argc, argv); //init GoogleTest
-	return RUN_ALL_TESTS(); // and run the tests
+		//Constructor
+		TokenTest()
+			: eolToken(Token::EOLToken)
+		{
+			//no code needed
+		}
+
+		//field
+		Token eolToken;
+};
+
+//Tests that an EOL Token has the proper type
+TEST_F(TokenTest, EOLTokenType) {
+	EXPECT_EQ(eolToken.getType(), TokenType::EOL);
 }
 
-//end of file
+//Tests that an EOL Token has the proper value
+TEST_F(TokenTest, EOLTokenValue) {
+	EXPECT_EQ(eolToken.getValue(), "");
+}
+
+//end of tests
