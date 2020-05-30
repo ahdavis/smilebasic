@@ -72,6 +72,11 @@ std::ostream& operator<<(std::ostream& os, TokenType tt) {
 			os << "right parenthesis";
 			break;
 		}
+
+		case TokenType::EOL: {
+			os << "end of line";
+			break;
+		}
 	}
 
 	//and return the stream

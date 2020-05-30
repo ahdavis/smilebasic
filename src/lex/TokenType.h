@@ -78,6 +78,13 @@ enum class TokenType {
 	 * A right parenthesis
 	 */
 	RPAREN,
+
+	//symbol tokens
+	
+	/**
+	 * The end of a line
+	 */
+	EOL,
 };
 
 /**
